@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ONYX RP — Правила и законодательная база</title>
+<style>
+:root{--bg1:#0b0d1a;--bg2:#1a1040;--txt:#f3f4ff;--mut:#aab0d6;--glass:rgba(255,255,255,.08);--bd:rgba(255,255,255,.22);--hl:rgba(255,255,255,.35);--acc:#8b7bff;--acc2:#38d1ff;--sh:rgba(0,0,0,.45);--c1:#7a5cff;--c2:#19c5ff;--c3:#ff5cc8;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){}}
+:root[data-theme="light"]{--bg1:#e9ecff;--bg2:#ffe9f6;--txt:#1b1d3a;--mut:#555b86;--glass:rgba(255,255,255,.45);--bd:rgba(255,255,255,.8);--hl:rgba(255,255,255,.95);--sh:rgba(60,60,120,.25)}
+@media(prefers-color-scheme:light){:root:not([data-theme="dark"]){--bg1:#e9ecff;--bg2:#ffe9f6;--txt:#1b1d3a;--mut:#555b86;--glass:rgba(255,255,255,.45);--bd:rgba(255,255,255,.8);--hl:rgba(255,255,255,.95);--sh:rgba(60,60,120,.25)}}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;min-height:100vh;font-family:-apple-system,"SF Pro Display","Segoe UI",Inter,Roboto,sans-serif;color:var(--txt);background:linear-gradient(135deg,var(--bg1),var(--bg2));background-attachment:fixed;overflow-x:hidden}
+.blob{position:fixed;border-radius:50%;filter:blur(70px);opacity:.65;z-index:0;animation:fl 18s ease-in-out infinite alternate}
+.b1{width:420px;height:420px;background:var(--c1);top:-100px;left:-80px}
+.b2{width:380px;height:380px;background:var(--c2);bottom:-120px;right:-60px;animation-delay:-6s}
+.b3{width:300px;height:300px;background:var(--c3);top:40%;left:55%;animation-delay:-11s;opacity:.45}
+@keyframes fl{to{transform:translate(60px,40px) scale(1.15)}}
+.glass{background:var(--glass);backdrop-filter:blur(22px) saturate(180%);-webkit-backdrop-filter:blur(22px) saturate(180%);border:1px solid var(--bd);border-radius:24px;box-shadow:0 12px 40px var(--sh),inset 0 1px 0 var(--hl),inset 0 -1px 0 rgba(255,255,255,.06)}
+.wrap{position:relative;z-index:1;max-width:980px;margin:0 auto;padding:20px 16px 60px}
+header.glass{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 18px;position:sticky;top:12px;z-index:5}
+.logo{font-weight:800;letter-spacing:.5px;font-size:1.15rem;display:flex;align-items:center;gap:10px}
+.logo i{width:30px;height:30px;border-radius:10px;background:linear-gradient(135deg,var(--acc),var(--acc2));display:inline-block;box-shadow:inset 0 1px 0 var(--hl)}
+.ctrl{display:flex;gap:8px;align-items:center}
+.seg{display:flex;padding:3px;border-radius:999px;background:rgba(255,255,255,.1);border:1px solid var(--bd)}
+.seg button,.icon{font:inherit;color:var(--txt);background:none;border:0;padding:6px 14px;border-radius:999px;cursor:pointer;font-weight:600;transition:.25s}
+.seg button.on{background:linear-gradient(135deg,var(--acc),var(--acc2));color:#fff;box-shadow:0 4px 14px rgba(120,110,255,.5)}
+.icon{border:1px solid var(--bd);background:rgba(255,255,255,.1);padding:6px 11px}
+.hero{padding:38px 28px;margin-top:22px;text-align:center}
+.hero h1{margin:0 0 8px;font-size:clamp(1.6rem,5vw,2.6rem);line-height:1.15}
+.hero p{margin:0 auto;color:var(--mut);max-width:560px}
+.search{margin:22px auto 0;max-width:460px;display:block;width:100%;padding:13px 18px;border-radius:999px;border:1px solid var(--bd);background:rgba(255,255,255,.12);color:var(--txt);font:inherit;outline:none;backdrop-filter:blur(10px)}
+.search::placeholder{color:var(--mut)}
+.search:focus{border-color:var(--acc2);box-shadow:0 0 0 3px rgba(56,209,255,.25)}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:22px 0 14px}
+.tab{padding:10px 18px;border-radius:999px;cursor:pointer;font:inherit;font-weight:600;color:var(--txt);border:1px solid var(--bd);background:var(--glass);backdrop-filter:blur(14px);transition:.25s}
+.tab:hover{transform:translateY(-2px)}
+.tab.on{background:linear-gradient(135deg,var(--acc),var(--acc2));color:#fff;border-color:transparent}
+.item{margin-bottom:12px;overflow:hidden}
+.item button{all:unset;box-sizing:border-box;width:100%;display:flex;gap:14px;align-items:center;padding:16px 20px;cursor:pointer}
+.num{min-width:54px;text-align:center;padding:4px 8px;border-radius:12px;background:rgba(255,255,255,.14);border:1px solid var(--bd);font-weight:700;font-size:.85rem;color:var(--acc2)}
+.ttl{flex:1;font-weight:600}
+.arr{transition:.3s;color:var(--mut)}
+.item.open .arr{transform:rotate(180deg)}
+.body{max-height:0;overflow:hidden;transition:max-height .35s ease;color:var(--mut);line-height:1.6;padding:0 20px}
+.item.open .body{padding-bottom:18px}
+.empty{text-align:center;color:var(--mut);padding:30px}
+.lang{position:relative}
+.lcur{font:inherit;color:var(--txt);background:rgba(255,255,255,.14);border:1px solid var(--bd);border-radius:999px;padding:7px 14px;cursor:pointer;font-weight:600;box-shadow:inset 0 1px 0 var(--hl);transition:.25s}
+.lcur:hover{background:rgba(255,255,255,.24)}
+.lmenu{position:absolute;right:0;top:calc(100% + 10px);min-width:190px;padding:6px;display:none;flex-direction:column;gap:2px;border-radius:18px;border:1px solid var(--bd);background:color-mix(in srgb,var(--bg1) 78%,transparent);backdrop-filter:blur(24px) saturate(180%);-webkit-backdrop-filter:blur(24px) saturate(180%);box-shadow:0 16px 40px var(--sh),inset 0 1px 0 var(--hl)}
+.lmenu.open{display:flex}
+.lmenu button{font:inherit;color:var(--txt);background:none;border:0;text-align:left;padding:10px 12px;border-radius:12px;cursor:pointer;transition:.2s}
+.lmenu button:hover,.lmenu button.on{background:linear-gradient(135deg,var(--acc),var(--acc2));color:#fff}
+.tab.on{box-shadow:0 6px 20px rgba(120,110,255,.55),inset 0 1px 0 var(--hl)}
+.item:hover{transform:translateY(-2px);transition:.25s}
+.ctrl{flex-wrap:wrap;justify-content:flex-end}
+header.glass{flex-wrap:wrap}
+:root[data-theme="aurora"]{--bg1:#04151a;--bg2:#0a3a33;--txt:#eafff8;--mut:#9fd6c6;--glass:rgba(255,255,255,.07);--bd:rgba(255,255,255,.2);--hl:rgba(255,255,255,.3);--acc:#2ee6a6;--acc2:#3aa8ff;--sh:rgba(0,0,0,.5);--c1:#12d18e;--c2:#2f7bff;--c3:#7cf5ff}
+:root[data-theme="sunset"]{--bg1:#1d0b1f;--bg2:#4a1a2c;--txt:#fff1ea;--mut:#e3b3b0;--glass:rgba(255,255,255,.08);--bd:rgba(255,255,255,.22);--hl:rgba(255,255,255,.32);--acc:#ff7a59;--acc2:#ffc15a;--sh:rgba(0,0,0,.5);--c1:#ff6a3d;--c2:#ff3d7f;--c3:#ffb347}
+:root[data-theme="rose"]{--bg1:#fff0f6;--bg2:#f1e6ff;--txt:#3a1d36;--mut:#85607f;--glass:rgba(255,255,255,.5);--bd:rgba(255,255,255,.85);--hl:#fff;--acc:#e754a6;--acc2:#a66bff;--sh:rgba(150,60,130,.25);--c1:#ff8fcf;--c2:#b490ff;--c3:#ffc2a8}
+.modal{position:fixed;inset:0;z-index:20;display:none;align-items:center;justify-content:center;padding:16px;background:rgba(0,0,0,.35);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.modal.open{display:flex}
+.mbox{position:relative;width:100%;max-width:640px;max-height:85vh;overflow:auto;padding:26px 22px}
+.mx{position:absolute;top:14px;right:14px}
+.mbox h2{margin:0 44px 16px 0}
+.mi{padding:14px 16px;margin-bottom:10px;border-radius:16px;background:rgba(255,255,255,.08);border:1px solid var(--bd)}
+.mi b{color:var(--acc2)}
+.mi p{margin:6px 0 0;color:var(--mut);line-height:1.55}
+#loader{position:fixed;inset:0;z-index:50;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;background:linear-gradient(135deg,var(--bg1),var(--bg2));transition:opacity .6s,visibility .6s}
+#loader.hide{opacity:0;visibility:hidden}
+.ring{width:84px;height:84px;border-radius:50%;border:3px solid var(--bd);border-top-color:var(--acc2);border-right-color:var(--acc);animation:sp 1s linear infinite;box-shadow:0 0 40px var(--acc)}
+@keyframes sp{to{transform:rotate(360deg)}}
+.lname{font-size:2rem;font-weight:800;letter-spacing:4px;background:linear-gradient(135deg,var(--acc),var(--acc2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.lsub{color:var(--mut);font-size:.9rem}
+.tabs{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;padding-bottom:6px}
+.tab{white-space:nowrap;flex:none}
+.ttl{min-width:0}
+.item{backdrop-filter:none;-webkit-backdrop-filter:none;box-shadow:0 6px 18px var(--sh),inset 0 1px 0 var(--hl);animation:mi .4s backwards}
+.flat button{cursor:default}.flat .body{display:none}
+.pen{padding:4px 11px;border-radius:999px;font-size:.78rem;font-weight:700;white-space:nowrap;background:rgba(255,190,90,.16);border:1px solid rgba(255,190,90,.45);color:#ffc977}
+.pen.hard{background:rgba(255,90,110,.16);border-color:rgba(255,90,110,.5);color:#ff8a9a}
+:root[data-theme="light"] .pen,:root[data-theme="rose"] .pen{color:#9a5a00}
+:root[data-theme="light"] .pen.hard,:root[data-theme="rose"] .pen.hard{color:#b3202f}
+.chap{margin:22px 4px 10px;font-size:1.05rem;color:var(--acc2)}
+@keyframes mf{from{opacity:0}}
+@keyframes mp{from{opacity:0;transform:translateY(40px) scale(.9);filter:blur(10px)}}
+@keyframes mi{from{opacity:0;transform:translateY(14px)}}
+.modal.open{animation:mf .3s ease}
+.modal.open .mbox{animation:mp .5s cubic-bezier(.2,.9,.3,1.15)}
+.mi{animation:mi .5s backwards}
+@media(max-width:600px){.blob{animation:none;filter:blur(50px)}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+.tabs{flex-wrap:wrap;overflow:visible;padding-bottom:0;margin:14px 0}
+.grp{display:flex;gap:10px;margin:22px 0 0;flex-wrap:wrap}
+.gb{flex:1;min-width:220px;padding:14px 18px;border-radius:18px;font:inherit;font-weight:700;cursor:pointer;color:var(--txt);border:1px solid var(--bd);background:var(--glass);transition:.25s}
+.gb:hover{transform:translateY(-2px)}
+.gb.on{background:linear-gradient(135deg,var(--acc),var(--acc2));color:#fff;border-color:transparent;box-shadow:0 8px 24px rgba(120,110,255,.5)}
+footer{text-align:center;color:var(--mut);margin-top:30px;font-size:.85rem}
+</style>
+</head>
+<body>
+<div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+<div class="wrap">
+  <header class="glass">
+    <div class="logo"><i></i>ONYX RP</div>
+    <div class="ctrl">
+      <button class="icon" data-r="dc">💬 Discord</button><button class="icon" data-r="tg">✈️ Telegram</button><div class="lang" id="lang"><button class="lcur" id="lcur"></button><div class="lmenu" id="lmenu"></div></div>
+      <div class="lang" id="thm"><button class="lcur" id="thcur"></button><div class="lmenu" id="thmenu"></div></div>
+    </div>
+  </header>
+  <section class="hero glass">
+    <h1 id="h1"></h1><p id="sub"></p>
+    <input class="search" id="q" type="search">
+  </section>
+  <div class="grp" id="grp"></div><nav class="tabs" id="tabs"></nav>
+  <main id="list"></main>
+  <footer id="ft"></footer>
+</div>
+<div class="modal" id="modal"><div class="glass mbox"><button class="icon mx" id="mx">✕</button><h2 id="mt"></h2><div id="mb"></div></div></div>
+<div id="loader"><div class="ring"></div><div class="lname">ONYX RP</div><div class="lsub" id="ldsub"></div></div>
+<script>
+const LANGS={ru:["🇷🇺","Русский"],uk:["🇺🇦","Українська"],kk:["🇰🇿","Қазақша"],et:["🇪🇪","Eesti"]};
+const UI={
+ kk:{h1:"Ережелер мен заңнама порталы",sub:"Ойынға дейін сервер ережелері мен штат заңдарымен танысыңыз.",ph:"Ережелер мен баптар бойынша іздеу…",none:"Ештеңе табылмады",ft:"© ONYX RP. Барлық құқықтар қорғалған."},
+ et:{h1:"Reeglite ja õigusaktide portaal",sub:"Tutvu enne mängimist serveri reeglite ja osariigi seadustega.",ph:"Otsi reeglite ja artiklite seast…",none:"Midagi ei leitud",ft:"© ONYX RP. Kõik õigused kaitstud."},
+ ru:{h1:"Портал правил и законодательной базы",sub:"Ознакомьтесь с правилами сервера и законами штата перед игрой.",ph:"Поиск по правилам и статьям…",none:"Ничего не найдено",ft:"© ONYX RP. Все права защищены.",art:"Ст."},
+ uk:{h1:"Портал правил та законодавчої бази",sub:"Ознайомтеся з правилами сервера та законами штату перед грою.",ph:"Пошук за правилами та статтями…",none:"Нічого не знайдено",ft:"© ONYX RP. Усі права захищено.",art:"Ст."}
+};
+/* ВНИМАНИЕ: тексты ниже — шаблон. Замените на реальные правила вашего сервера. */
+const DATA=[
+ {id:"gen",t:{ru:"Общие правила",uk:"Загальні правила"},items:[
+  {n:"1.1",t:{ru:"Уважение к игрокам",uk:"Повага до гравців"},d:{ru:"Запрещены оскорбления, дискриминация и токсичное поведение по отношению к другим игрокам и администрации.",uk:"Заборонені образи, дискримінація та токсична поведінка щодо інших гравців і адміністрації."}},
+  {n:"1.2",t:{ru:"Запрет на читы и баги",uk:"Заборона на чіти та баги"},d:{ru:"Использование стороннего ПО, читов и умышленная эксплуатация багов запрещены. Наказание — бан.",uk:"Використання стороннього ПЗ, чітів та умисна експлуатація багів заборонені. Покарання — бан."}},
+  {n:"1.3",t:{ru:"Один аккаунт",uk:"Один акаунт"},d:{ru:"Игроку разрешён один основной аккаунт. Передача аккаунта третьим лицам запрещена.",uk:"Гравцеві дозволено один основний акаунт. Передача акаунта третім особам заборонена."}}
+ ]},
+ {id:"rp",t:{ru:"Roleplay-правила",uk:"Roleplay-правила"},items:[
+  {n:"2.1",t:{ru:"Role Play (RP)",uk:"Role Play (RP)"},d:{ru:"Игрок обязан отыгрывать роль персонажа, соответствующую реальности игрового мира.",uk:"Гравець зобов’язаний відігравати роль персонажа відповідно до реалій ігрового світу."}},
+  {n:"2.2",t:{ru:"Metagaming (MG)",uk:"Metagaming (MG)"},d:{ru:"Запрещено использовать информацию, полученную вне игры (Discord, стримы), внутри игрового процесса.",uk:"Заборонено використовувати інформацію, отриману поза грою (Discord, стріми), у ігровому процесі."}},
+  {n:"2.3",t:{ru:"Powergaming (PG)",uk:"Powergaming (PG)"},d:{ru:"Запрещено совершать действия, невозможные в реальности, или принуждать других игроков к действиям без отыгрыша.",uk:"Заборонено здійснювати дії, неможливі в реальності, або примушувати інших гравців до дій без відіграшу."}},
+  {n:"2.4",t:{ru:"Death Match (DM)",uk:"Death Match (DM)"},d:{ru:"Убийство или нанесение урона без веской RP-причины запрещено.",uk:"Вбивство або завдання шкоди без вагомої RP-причини заборонені."}}
+ ]},
+ {id:"law",t:{ru:"Законодательная база",uk:"Законодавча база"},items:[
+  {n:"Ст. 1",t:{ru:"Конституция штата",uk:"Конституція штату"},d:{ru:"Основной закон, определяющий права и обязанности граждан, структуру власти и государственных органов.",uk:"Основний закон, що визначає права й обов’язки громадян, структуру влади та державних органів."}},
+  {n:"Ст. 2",t:{ru:"Уголовный кодекс",uk:"Кримінальний кодекс"},d:{ru:"Перечень преступлений и мер наказания: штрафы, арест, лишение свободы.",uk:"Перелік злочинів і заходів покарання: штрафи, арешт, позбавлення волі."}},
+  {n:"Ст. 3",t:{ru:"Административный кодекс",uk:"Адміністративний кодекс"},d:{ru:"Нарушения ПДД, общественного порядка и порядок их рассмотрения.",uk:"Порушення ПДР, громадського порядку та порядок їх розгляду."}}
+ ]},
+{id:"dc",t:{ru:"💬 Правила Discord",uk:"💬 Правила Discord",kk:"💬 Discord ережелері",et:"💬 Discordi reeglid"},items:[
+{n:"1",t:{ru:"Уважение",uk:"Повага",kk:"Құрмет",et:"Lugupidamine"},d:{ru:"Никаких оскорблений, токсичности, травли и перехода на личности.",uk:"Жодних образ, токсичності, цькування та переходу на особистості.",kk:"Қорлау, уыттылық, қудалау және тұлғаға өту мүлде болмайды.",et:"Solvamine, toksilisus, kiusamine ja isiklikuks minek on keelatud."}},
+{n:"2",t:{ru:"Без спама",uk:"Без спаму",kk:"Спамсыз",et:"Ilma spämmita"},d:{ru:"Запрещен флуд, капс, массовые теги (@everyone/@here) и спам в ЛС участникам.",uk:"Заборонені флуд, капс, масові теги (@everyone/@here) та спам в ЛС учасникам.",kk:"Флуд, капс, жаппай тегтер (@everyone/@here) және қатысушыларға жеке хабарламада спам жіберуге тыйым салынады.",et:"Keelatud on flood, suurtähtedega kirjutamine, massimärgistused (@everyone/@here) ja spämm liikmete privaatsõnumitesse."}},
+{n:"3",t:{ru:"Реклама",uk:"Реклама",kk:"Жарнама",et:"Reklaam"},d:{ru:"Любые ссылки, пиар своих каналов и продажа услуг без одобрения админов запрещены.",uk:"Будь-які посилання, піар своїх каналів і продаж послуг без схвалення адмінів заборонені.",kk:"Админдердің рұқсатынсыз кез келген сілтеме, өз арналарын жарнамалау және қызмет сатуға тыйым салынады.",et:"Igasugused lingid, oma kanalite reklaamimine ja teenuste müük ilma adminite loata on keelatud."}},
+{n:"4",t:{ru:"Контент 18+",uk:"Контент 18+",kk:"18+ контент",et:"18+ sisu"},d:{ru:"Запрещены NSFW, шок-контент, порнография и жестокость (для этого есть отдельные каналы, если они созданы).",uk:"Заборонені NSFW, шок-контент, порнографія та жорстокість (для цього є окремі канали, якщо вони створені).",kk:"NSFW, шок-контент, порнография және қатыгездікке тыйым салынады (бұған бөлек арналар болса, сонда).",et:"NSFW, šokeeriv sisu, pornograafia ja julmus on keelatud (selleks on eraldi kanalid, kui need on loodud)."}},
+{n:"5",t:{ru:"Голосовые каналы",uk:"Голосові канали",kk:"Дауыстық арналар",et:"Häälkanalid"},d:{ru:"Запрещено кричать, включать музыку в микрофон и использовать программы для изменения голоса.",uk:"Заборонено кричати, вмикати музику в мікрофон і використовувати програми для зміни голосу.",kk:"Айқайлауға, микрофонға музыка қосуға және дауысты өзгертетін бағдарламаларды қолдануға тыйым салынады.",et:"Karjumine, muusika mikrofoni kaudu mängimine ja hääle muutmise programmide kasutamine on keelatud."}},
+{n:"6",t:{ru:"Запретные темы",uk:"Заборонені теми",kk:"Тыйым салынған тақырыптар",et:"Keelatud teemad"},d:{ru:"Никакой политики, разжигания ненависти (расизм, нацизм) и дезинформации.",uk:"Жодної політики, розпалювання ненависті (расизм, нацизм) і дезінформації.",kk:"Саясат, өшпенділікті қоздыру (нәсілшілдік, нацизм) және жалған ақпарат болмайды.",et:"Mingit poliitikat, vihakõnet (rassism, natsism) ega desinformatsiooni."}},
+{n:"7",t:{ru:"Оформление",uk:"Оформлення",kk:"Рәсімдеу",et:"Vormistus"},d:{ru:"Никнеймы, статусы и аватарки не должны содержать мата, оскорблений и порнографии.",uk:"Нікнейми, статуси й аватарки не повинні містити нецензурної лексики, образ і порнографії.",kk:"Лақап аттар, статустар мен аватарларда балағат сөз, қорлау және порнография болмауы тиіс.",et:"Hüüdnimed, staatused ja avatarid ei tohi sisaldada roppusi, solvanguid ega pornograafiat."}},
+{n:"8",t:{ru:"Модерация",uk:"Модерація",kk:"Модерация",et:"Modereerimine"},d:{ru:"Решение администрации является окончательным. Наказание (мут/кик/бан) выдается на усмотрение модераторов.",uk:"Рішення адміністрації є остаточним. Покарання (мут/кік/бан) видається на розсуд модераторів.",kk:"Әкімшіліктің шешімі түпкілікті. Жаза (мут/кик/бан) модераторлардың қалауымен беріледі.",et:"Administratsiooni otsus on lõplik. Karistuse (mute/kick/ban) määravad moderaatorid oma äranägemise järgi."}}
+]},
+{id:"tg",t:{ru:"✈️ Правила Telegram",uk:"✈️ Правила Telegram",kk:"✈️ Telegram ережелері",et:"✈️ Telegrami reeglid"},items:[
+{n:"—",t:{ru:"Скоро",uk:"Скоро",kk:"Жақында",et:"Peagi"},d:{ru:"Правила Telegram будут добавлены здесь.",uk:"Правила Telegram будуть додані тут.",kk:"Telegram ережелері осында қосылады.",et:"Telegrami reeglid lisatakse siia."}}
+]}
+];
+DATA.find(s=>s.id==="tg").items=[
+{n:"1",t:{ru:"Адекватность",uk:"Адекватність",kk:"Парасаттылық",et:"Adekvaatsus"},d:{ru:"Общаемся вежливо. Оскорбления авторов или других участников — бан.",uk:"Спілкуємося ввічливо. Образи авторів або інших учасників — бан.",kk:"Сыпайы қарым-қатынас жасаймыз. Авторларды немесе басқа қатысушыларды қорлау — бан.",et:"Suhtleme viisakalt. Autorite või teiste liikmete solvamine — ban."}},
+{n:"2",t:{ru:"Антиспам",uk:"Антиспам",kk:"Антиспам",et:"Rämpsuvastane"},d:{ru:"Реклама в комментариях, ссылки, пиар и бессмысленный флуд запрещены.",uk:"Реклама в коментарях, посилання, піар та безглуздий флуд заборонені.",kk:"Пікірлерде жарнама, сілтемелер, пиар және мағынасыз флудқа тыйым салынады.",et:"Reklaam kommentaarides, lingid, piar ja mõttetu flood on keelatud."}},
+{n:"3",t:{ru:"Запретный контент",uk:"Заборонений контент",kk:"Тыйым салынған контент",et:"Keelatud sisu"},d:{ru:"Запрещено скидывать порнографию, шок-контент и любые материалы 18+.",uk:"Заборонено скидати порнографію, шок-контент і будь-які матеріали 18+.",kk:"Порнография, шок-контент және кез келген 18+ материалдарды жіберуге тыйым салынады.",et:"Pornograafia, šokeeriva sisu ja igasuguse 18+ materjali postitamine on keelatud."}},
+{n:"4",t:{ru:"Никакой политики",uk:"Жодної політики",kk:"Саясатсыз",et:"Poliitikata"},d:{ru:"Канал создан для отдыха/информации по теме, политические споры караются мутом.",uk:"Канал створено для відпочинку/інформації за темою, політичні суперечки караються мутом.",kk:"Арна демалыс/тақырып бойынша ақпарат үшін құрылған, саяси дауға мут беріледі.",et:"Kanal on loodud puhkuseks/teemakohaseks infoks, poliitilised vaidlused karistatakse mute’iga."}},
+{n:"5",t:{ru:"Мат",uk:"Мат",kk:"Балағат сөз",et:"Roppused"},d:{ru:"Мат разрешён в меру, без оскорблений.",uk:"Нецензурна лексика дозволена в міру, без образ.",kk:"Балағат сөзге қалыпты шамада рұқсат, қорлаусыз.",et:"Roppused on mõõdukalt lubatud, ilma solvanguteta."}}
+];
+let L="ru",cur="all",Q="";
+try{L=localStorage.getItem("lang")||"ru"}catch(e){}
+const $=s=>document.querySelector(s);
+const W={ru:"Предупреждение",uk:"Попередження",kk:"Ескерту",et:"Hoiatus"},PM={ru:"Перманентный бан",uk:"Перманентний бан",kk:"Тұрақты бан",et:"Alaline ban"},RM={ru:"Снятие с должности",uk:"Зняття з посади",kk:"Қызметтен босату",et:"Ametist vabastamine"},BN={ru:"Бан",uk:"Бан",kk:"Бан",et:"Ban"},DY={ru:"дн.",uk:"дн.",kk:"күн",et:"p"},LB={ru:"Наказание",uk:"Покарання",kk:"Жаза",et:"Karistus"};
+function f1(c){if(c[0]==="=")return c.slice(1);if(c==="w")return W[L];if(c==="k")return"KICK";if(c==="p")return PM[L];if(c==="r")return RM[L];const q2=c.match(/^([jf])(\d+)(?:-(\d+))?$/);if(q2){const r=q2[2]+(q2[3]?"–"+q2[3]:"");return q2[1]==="f"?FN[L]+": "+r+" ₽":JL[L]+": "+r+" "+yr(+(q2[3]||q2[2]))}const m=c.match(/^b(\d+)(?:-(\d+))?$/);return m?BN[L]+": "+m[1]+(m[2]?"–"+m[2]:"")+" "+DY[L]:c}
+const pen=c=>c.split("/").map(a=>a.split("+").map(x=>x.split("&").map(f1).join(" + ")).join(" → ")).join(" / ");
+const dd=i=>i.d?(i.d[L]||i.d.ru):"",pb=i=>i.p?pen(i.p):"";
+const FN={ru:"Штраф",uk:"Штраф",kk:"Айыппұл",et:"Trahv"},JL={ru:"Лишение свободы",uk:"Позбавлення волі",kk:"Бас бостандығынан айыру",et:"Vangistus"};
+const yr=n=>L==="ru"?(n==1?"год":n<5?"года":"лет"):L==="uk"?(n==1?"рік":n<5?"роки":"років"):L==="kk"?"жыл":"a";
+const P1=[
+["1","Правила общения",[
+["1.1","Каждый игрок должен уважать друг друга","w"],["1.2","Оскорбление родни","b5"],["1.3","Оскорбление нации, религии, расы","b7"],["1.4","Угрозы и буллинг","b3"],["1.5","Пропаганда/Гимны (OOC) (упоминание военных конфликтов, политики)","b7"],["1.6","Флуд, спам, капс (злоупотребление заглавными буквами)","b1"],["1.7","Реклама сторонних серверов, ссылок, сообществ","b7"],["1.8","Разглашение личной информации игроков (IP, адрес, фото, переписки)","b14"],["1.9","Оскорбление администрации и неуважение к её решениям","b3"],["1.10","Намеренное введение в заблуждение администрации (ложные жалобы, обман)","w+b3"]]],
+["2","RP-термины и наказания",[
+["2.1","DM (убийство/нанесение урона без RP-причины)","b1-3"],["2.2","RDM (убийство кого-либо без RP-причины)","b1-3"],["2.3","DB (намеренный наезд транспортом на игрока без RP-причины)","b1-3"],["2.4","VDM (убийство транспортом без RP-причины)","b1-3"],["2.5","RK (возвращение на место смерти с целью отомстить)","b1-3"],["2.6","TK (убийство члена своей фракции)","b1-3"],["2.7","SK (убийство на месте появления)","b1-3"],["2.8","PG (присвоение героических качеств своему персонажу)","b1-3"],["2.9","MG (OOC информация в IC)","b1-3"],["2.10","Fear RP (отсутствие страха за свою жизнь)","b1-3"],["2.11","NRP (действия, нарушающие логику RP)","b1-3"],["2.12","NRD (нереалистичное вождение транспорта)","b1-3"],["2.13","ForceRP (навязывание другому игроку результата RP-ситуации)","b1-3"],["2.14","Combat Log (выход из игры во время активных RP-действий во избежание последствий)","b3-5"],["2.15","Combat Medic (лечение персонажей во время активной перестрелки)","b2-4"],["2.16","Cop Baiting (провокация полиции для создания погони)","b2-4"],["2.17","RP-escape (намеренный уход от RP-ситуации запрещённым способом)","b2-4"],["2.18","ByPass Ban (обход блокировки аккаунта)","p"],["2.19","NRP Heal (лечение без отыгровки или во время боя)","b1-3"],["2.20","BodyBlock (блокировка транспорта телом)","b1-3"],["2.21","Убийство AFK-персонажа","b1-2"],["2.22","FanRP (ролевая игра ради веселья и юмора)",""],["2.23","ERP (отыгрыш действий, диалогов или ситуаций сексуального, интимного и откровенно эротического характера)","b5"]]],
+["3","Внешний вид и скины",[
+["3.1","Оскорбительные, провоцирующие скины","b2"],["3.2","Форма спецслужб для тех, кто не состоит во фракции","b1"],["3.3","Скины животных без правильной отыгровки","b1"],["3.4","Скины с политической символикой, флагами и т.д.","b3"],["3.5","Крупногабаритные скины, создающие помеху","b1"]]],
+["4","Правила для сотрудников полиции",[
+["4.1","Cuff без RP-причины","b2"],["4.2","Taser без RP-причины","b1"],["4.3","Полицейский не имеет права грабить, совершать преступления за гражданского","r"],["4.4","Cuff ради мести/троллинга",""],["4.5","Farm XP (без разрешения)","b1"],["4.6","Просмотр планшета для выявления преступлений","b1"],["4.7","Использование радара без разрешения администрации","b1"]]],
+["5","Голосовой чат",[
+["5.1","Посторонние звуки, создающие помеху","k"],["5.2","Перебивание с целью помехи","k"],["5.3","Использование ПО для изменения голоса","b3"],["5.4","Музыка без согласия в толпе","b1"],["5.5","Музыка вне автомобиля","b1"]]],
+["6","Пиротехника",[
+["6.1","Использование любых взрывчатых устройств (исключение: ограбление, особые RP-ситуации)","p"],["6.2","Массовое/непрерывное использование взрывчатых устройств","b3"],["6.3","Продажа или передача нелегальной пиротехники без соответствующей RP-отыгровки","b3"],["6.4","Использование любых взрывчатых устройств в зелёной зоне","b3"]]],
+["7","Зелёная зона (GreenZone)",[
+["7.1","Стрельба в зелёной зоне","b3"],["7.2","Ношение оружия в зелёной зоне (исключение: гос. сотрудники)","b1"],["7.3","Уход в зелёную зону с целью отбиться от погони","b2"],["7.4","Провокация на конфликт, начинание драки в ЗЗ","b1"],["7.5","Использование маски в ЗЗ","b1"]]],
+["8","Отношение/взаимодействие с администрацией",[
+["8.1","Оскорбление администрации (в игре, ТГ, ДС)","b3"],["8.2","Неуважение и помеха работе","b3"],["8.3","Обман/ввод в заблуждение администрации","b5"],["8.4","Угроза администрации (снос, докс, деанон, расправа в реальной жизни, вред серверу)","b30/=ЧСП"],["8.5","Неподчинение требованиям администрации","b3"],["8.6","Уход от администрации","b5"]]],
+["9","Похищение",[
+["9.1","Похищение осуществляется от двух человек, не менее","b1"],["9.2","Не был вызван переговорщик на место похищения","b1"],["9.3","Запрещено похищать самого переговорщика","b1"],["9.4","Похищение в зелёной зоне","b1"],["9.5","Запрещено делать или требовать что-либо у похищенного (до приезда переговорщика)","b2"],["9.6","На приезд переговорщика даётся ровно 5 минут (после можете делать что хотите)","=Соблюдение таймингов"]]],
+["10","Суд",[
+["10.1","Игнорирование RP-замечания или охраны суда","k"],["10.2","На ожидание судьи и адвоката даётся ровно 10 минут",""],["10.3","В случае отсутствия судьи везёте в КПЗ на 10 минут",""],["10.4","В случае признания своей вины наказание уменьшается в 2 раза",""]]],
+["11","Тимминг",[
+["11.1","Гражданским лицам категорически запрещается как-либо помогать гос. сотрудникам","b3"],["11.2","Запрещено во время погони садиться к человеку, у которого отсутствует розыск","b2"],["11.3","Сотрудникам полиции запрещается иметь какие-либо контакты, договорённости или сотрудничество с криминальными фракциями","b5"],["11.4","Запрещено с розыском (даже если вы сотрудник) работать вместе с сотрудником полиции (исключений нет)",""]]],
+["12","Отмычки",[
+["12.1","Снятие или попытка снятия наручников во время активной перестрелки","b2"],["12.2","Взлом или попытка взлома наручников без отыгровки","b3"],["12.3","Взлом или попытка взлома наручников во время процессуальных действий","b5"],["12.4","Взлом наручников в воде","b3"],["12.5","Взлом наручников в тяжело раненом состоянии","b3"]]],
+["13","Особые нарушения",[
+["13.1","Рейдерство","p"],["13.2","Реклама сторонних серверов, ПО, массовый флуд","p"],["13.3","Использование сторонних ПО, как визуальных, так и физических","p"],["13.4","Игра без войса","k+p"],["13.5","Труднодоступные места (где лестница физически ни к чему не прислоняется или места, физически недоступные)","b1"],["13.6","Работа без фракции","w+b3"]]]
+];
+const LAWS=[["Ч.1","Уголовный кодекс","Главы I–VI · статьи 1–40"],["Ч.2","КоАП и ПДД","Главы I–II · статьи 1.0–1.11, 2.1–2.3"],["Ч.3","Уголовно-процессуальный кодекс (УПК)","Главы I–II · статьи 1–9"],["Ч.4","Закон «О прокуратуре Российской Федерации»","Статьи 1–2"],["Ч.5","Федеральный закон «О правительстве»","Главы I–III · статьи 1–9"],["Ч.6","Федеральный закон «О Министерстве внутренних дел (МВД)»","Главы I–III · статьи 1–7"],["Ч.7","Федеральный закон «Об оружии»","Главы I–III · статьи 1–7"]];
+DATA.splice(0,3,...P1.map(s=>({id:"s"+s[0],t:{ru:s[0]+". "+s[1]},items:s[2].map(x=>({n:x[0],t:{ru:x[1]},p:x[2]}))})),{id:"law",t:{ru:"📚 Остальные законы (Ч.2–7)"},items:LAWS.map(x=>({n:x[0],t:{ru:x[1]},d:{ru:x[2]}}))});
+DATA.find(s=>s.id==="law").items.shift();
+const UKR=[
+['Глава I. Преступления против личности',[
+['1','Умышленное нанесение лёгкого вреда здоровью','Нанесение небольших телесных или психологических травм человеку.','j1'],
+['2','Умышленное нанесение среднего вреда здоровью','Нанесение неопасных для жизни телесных или психологических травм.','j2'],
+['3','Умышленное нанесение тяжкого вреда здоровью','Нанесение опасных для жизни телесных или психологических травм.','j5'],
+['4','Убийство','Умышленное причинение смерти другому человеку.','j5'],
+['5','Кража','Тайное хищение чужого имущества.','f2000/j3'],
+['6','Грабеж','Открытое хищение чужого имущества.','j5'],
+['7','Разбой','Нападение с применением насилия в целях хищения имущества.','j3'],
+['7.1','Разбой группой лиц','Нападение с применением насилия в целях хищения имущества, совершённое группой лиц.','j5'],
+['8','Соучастие в преступлении','Умышленное совместное участие двух или более лиц в совершении умышленного преступления.','j1-5'],
+['9 (Ч.1)','Мошенничество','Хищение чужого имущества путём обмана или злоупотребления доверием.','f1000/j2'],
+['9 (Ч.2)','Мошенничество группой лиц','Хищение чужого имущества путём обмана, совершённое группой лиц.','f2000&j3'],
+['9 (Ч.3)','Мошенничество с помощью служебного положения','Хищение чужого имущества с использованием должностных полномочий.','j5'],
+['10','Развратные действия','Совершение развратных действий без применения насилия.','j3'],
+['11','Клевета','Распространение заведомо ложных сведений, порочащих честь и достоинство другого лица или подрывающих его репутацию.','j2'],
+['12','Угрозы','Угрозы насилием или физической расправой.','j2'],
+['13','Изнасилование','Половой акт с применением насилия и использованием беспомощного состояния потерпевшей.','j5'],
+['14','Посягательство на жизнь сотрудника правоохранительного органа','Посягательство на жизнь сотрудника правоохранительного органа, военнослужащего или их близких в целях воспрепятствования законной деятельности. Включает применение насилия (опасного или неопасного для жизни), угрозы в связи с исполнением должностных обязанностей.','j5']]],
+['Глава II. Преступления против свободы, чести и достоинства личности',[
+['15','Похищение человека','Незаконное завладение, перемещение и удержание человека помимо его воли.','j5'],
+['16','Захват заложника','Захват или удержание лица в качестве заложника с целью принуждения государства, организации или гражданина совершить какое-либо действие.','j5'],
+['17','Использование рабского труда','Использование труда человека, в отношении которого осуществляются полномочия, присущие праву собственности.','j5']]],
+['Глава III. Преступления против общественной безопасности и общественного порядка',[
+['18','Заведомо ложное сообщение об акте терроризма','Ложное сообщение о готовящихся взрыве, поджоге или иных действиях, создающих опасность гибели людей.','j3'],
+['19','Вандализм','Осквернение зданий или иных сооружений, порча имущества на общественном транспорте или в иных общественных местах.','j2'],
+['20','Хулиганство','Грубое нарушение общественного порядка, выражающее явное неуважение к обществу.','j2'],
+['21','Бандитизм','Создание устойчивой вооруженной группы (банды) в целях нападения на граждан или организации, а равно руководство такой группой.','j3'],
+['22','Порча имущества','Порча или уничтожение имущества гражданских лиц или государственных организаций.','j2'],
+['23','Незаконные приобретение, хранение, перевозка, изготовление, переработка наркотиков','Незаконные приобретение, хранение, перевозка, изготовление, переработка наркотических средств, психотропных веществ или их аналогов.','j5'],
+['24','Ношение оружия в открытом виде','Ношение холодного или огнестрельного оружия в публичных местах без чехла/кобуры (за исключением силовых ведомств на службе).','j2']]],
+['Глава IV. Дорожное движение',[
+['25','Угон транспортного средства','Неправомерное завладение автомобилем или иным транспортным средством без цели хищения (угон с целью покататься).','j3'],
+['26','Уход с места ДТП','Покидание водителем места Дорожно-Транспортного Происшествия (ДТП), участником которого он являлся.','j2']]],
+['Глава V. Имущество и финансы',[
+['27','Нарушение неприкосновенности жилища','Незаконное проникновение на частную территорию или в жилище без согласия проживающего и без цели кражи.','j2'],
+['28','Незаконное проникновение на охраняемый объект','Незаконное проникновение на охраняемую территорию, либо на важный государственный объект и служебную территорию государственных фракций.','j3'],
+['29','Неуплата штрафа','Уклонение от своевременной уплаты выписанных сотрудниками государственных органов штрафов.','j1'],
+['30','Фальшивомонетничество','Изготовление, хранение, перевозка или сбыт поддельных денег или ценных бумаг.','j3/j5'],
+['31','Незаконное предпринимательство','Осуществление предпринимательской деятельности без регистрации в гос. органах или без получения обязательной лицензии.','j3/j5']]],
+['Глава VI. Прочее',[
+['32','Оскорбление представителя власти','Публичное оскорбление представителя власти при исполнении им своих должностных обязанностей.','f1000/j1'],
+['33','Побег из места лишения свободы','Побег из места лишения свободы, из-под ареста, из-под стражи или будучи задержанным.','j3'],
+['34','Подделка документов или знаков','Подделка, изготовление или оборот поддельных документов, государственных наград, штампов, печатей или бланков.','j3'],
+['35','Государственная измена','Предоставление иностранному или иному гос-ву, организации важных или секретных государственных сведений.','j5'],
+['36','Получение взятки','Получение должностным лицом взятки в виде денег, ценных бумаг, драгоценностей или услуг.','j5'],
+['37','Дача взятки','Дача взятки должностному лицу лично или через посредника.','j5'],
+['38','Заведомо ложный донос','Заведомо ложный донос о совершении преступления в правоохранительные органы.','f1000/j1'],
+['39','Подделка VIN-номера автомобиля','Подделка или уничтожение идентификационного номера (VIN) транспортного средства.','j1'],
+['40','Присвоение полномочий должностного лица','Присвоение государственным служащим или муниципальным служащим полномочий, которыми он не наделен законом.','j3']]]
+];
+DATA.splice(DATA.findIndex(s=>s.id==="law"),0,{id:"uk",t:{ru:"⚖️ Уголовный кодекс"},items:UKR.flatMap(c=>[{h:c[0]},...c[1].map(x=>({n:"Ст. "+x[0],t:{ru:x[1]},d:{ru:x[2]},p:x[3]}))])});
+function render(){
+ const u=UI[L];document.documentElement.lang=L;applyTR();grpUI();
+ $("#h1").textContent=u.h1;$("#ldsub").textContent=u.h1;themeUI();if(R)rules();$("#sub").textContent=u.sub;$("#q").placeholder=u.ph;$("#ft").textContent=u.ft;
+ $("#lcur").textContent=LANGS[L][0]+" "+LANGS[L][1]+" ▾";
+ $("#lmenu").innerHTML=Object.entries(LANGS).map(([k,v])=>`<button data-l="${k}" class="${k===L?"on":""}">${v[0]} ${v[1]}</button>`).join("");
+ const all={ru:"Все",uk:"Усі",kk:"Барлығы",et:"Kõik"}[L];
+ $("#tabs").innerHTML=[{id:"all",t:{ru:all}},...DATA.filter(s=>s.id!=="dc"&&s.id!=="tg"&&inG(s))].map(s=>`<button class="tab ${s.id===cur?"on":""}" data-id="${s.id}">${s.t[L]||s.t.ru}</button>`).join("");
+ const q=Q.trim().toLowerCase();let h="";
+ DATA.filter(s=>s.id!=="dc"&&s.id!=="tg"&&(q||inG(s))&&(cur==="all"||s.id===cur)).forEach(s=>s.items.forEach(i=>{
+  if(i.h){if(!q)h+=`<h3 class="chap">${i.h}</h3>`;return}
+  if(q&&!((i.t[L]||i.t.ru)+dd(i)+pb(i)+i.n).toLowerCase().includes(q))return;
+  h+=`<article class="item glass${dd(i)?"":" flat"}"><button><span class="num">${i.n}</span><span class="ttl">${i.t[L]||i.t.ru}</span>${pb(i)?`<span class="pen${/(^|[+&/])p$/.test(i.p)?" hard":""}">${pb(i)}</span>`:""}${dd(i)?'<span class="arr">⌄</span>':""}</button><div class="body">${dd(i)}</div></article>`;
+ }));
+ $("#list").innerHTML=h||`<div class="empty glass">${u.none}</div>`;
+}
+document.addEventListener("click",e=>{
+ if(!e.target.closest("#lang"))$("#lmenu").classList.remove("open");if(!e.target.closest("#thm"))$("#thmenu").classList.remove("open");
+ const tm=e.target.closest("#thmenu button");if(tm){T=tm.dataset.t;document.documentElement.dataset.theme=T;try{localStorage.setItem("theme",T)}catch(_){}$("#thmenu").classList.remove("open");themeUI();return}
+ if(e.target.closest("#thcur")){$("#thmenu").classList.toggle("open");$("#lmenu").classList.remove("open");return}
+ const rb=e.target.closest("[data-r]");if(rb){R=rb.dataset.r;rules();$("#modal").classList.add("open");return}
+ if(e.target.closest("#mx")||e.target.id==="modal"){$("#modal").classList.remove("open");R=null;return}
+ const lb=e.target.closest("#lmenu button");if(lb){L=lb.dataset.l;try{localStorage.setItem("lang",L)}catch(_){}$("#lmenu").classList.remove("open");render();return}if(e.target.closest("#lcur")){$("#lmenu").classList.toggle("open");return}
+ const gb=e.target.closest("#grp button");if(gb){G=gb.dataset.g;cur="all";render();return}
+ const tb=e.target.closest(".tab");if(tb){cur=tb.dataset.id;render();return}
+ const it=e.target.closest(".item button");if(it){const a=it.parentElement,b=a.querySelector(".body");a.classList.toggle("open");b.style.maxHeight=a.classList.contains("open")?b.scrollHeight+40+"px":0;}
+});
+const TR={uk:{},kk:{},et:{}};let G="r";
+function addTR(l,keys,s){s.split("|").forEach((v,i)=>{TR[l][keys[i]]=v})}
+const K1=[...Array(10)].map((_,i)=>"1."+(i+1)).concat([...Array(23)].map((_,i)=>"2."+(i+1))),KS=[...Array(13)].map((_,i)=>"s"+(i+1)).concat(["uk","law"]);
+addTR("uk",KS,"1. Правила спілкування|2. RP-терміни та покарання|3. Зовнішній вигляд і скіни|4. Правила для співробітників поліції|5. Голосовий чат|6. Піротехніка|7. Зелена зона (GreenZone)|8. Ставлення/взаємодія з адміністрацією|9. Викрадення|10. Суд|11. Тімінг|12. Відмички|13. Особливі порушення|⚖️ Кримінальний кодекс|📚 Інші закони (Ч.2–7)");
+addTR("kk",KS,"1. Қарым-қатынас ережелері|2. RP-терминдер және жазалар|3. Сыртқы көрініс және скиндер|4. Полиция қызметкерлеріне арналған ережелер|5. Дауыстық чат|6. Пиротехника|7. Жасыл аймақ (GreenZone)|8. Әкімшілікке қатынас/әрекеттесу|9. Адам ұрлау|10. Сот|11. Тиминг|12. Құлып ашқыштар|13. Ерекше бұзушылықтар|⚖️ Қылмыстық кодекс|📚 Басқа заңдар (2–7-бөлім)");
+addTR("et",KS,"1. Suhtlusreeglid|2. RP-terminid ja karistused|3. Välimus ja skinid|4. Politseinike reeglid|5. Häälvestlus|6. Pürotehnika|7. Roheline tsoon (GreenZone)|8. Suhtumine administratsiooni ja suhtlus temaga|9. Inimrööv|10. Kohus|11. Tiimimine|12. Haaknõelad|13. Eririkkumised|⚖️ Karistusseadustik|📚 Muud seadused (2.–7. osa)");
+addTR("uk",K1,"Кожен гравець має поважати один одного|Образа рідних|Образа нації, релігії, раси|Погрози та булінг|Пропаганда/Гімни (OOC) (згадування військових конфліктів, політики)|Флуд, спам, капс (зловживання великими літерами)|Реклама сторонніх серверів, посилань, спільнот|Розголошення особистої інформації гравців (IP, адреса, фото, листування)|Образа адміністрації та неповага до її рішень|Навмисне введення адміністрації в оману (неправдиві скарги, обман)|DM (вбивство/завдання шкоди без RP-причини)|RDM (вбивство будь-кого без RP-причини)|DB (навмисний наїзд транспортом на гравця без RP-причини)|VDM (вбивство транспортом без RP-причини)|RK (повернення на місце смерті з метою помститися)|TK (вбивство члена своєї фракції)|SK (вбивство на місці появи)|PG (надання героїчних якостей своєму персонажу)|MG (OOC інформація в IC)|Fear RP (відсутність страху за своє життя)|NRP (дії, що порушують логіку RP)|NRD (нереалістичне водіння транспорту)|ForceRP (нав’язування іншому гравцеві результату RP-ситуації)|Combat Log (вихід з гри під час активних RP-дій, щоб уникнути наслідків)|Combat Medic (лікування персонажів під час активної перестрілки)|Cop Baiting (провокація поліції для створення погоні)|RP-escape (навмисне ухилення від RP-ситуації забороненим способом)|ByPass Ban (обхід блокування акаунта)|NRP Heal (лікування без відіграшу або під час бою)|BodyBlock (блокування транспорту тілом)|Вбивство AFK-персонажа|FanRP (рольова гра заради веселість і гумору)|ERP (відіграш персонажами дій, діалогів або ситуацій сексуального, інтимного та відверто еротичного характеру)");
+addTR("kk",K1,"Әр ойыншы бір-бірін құрметтеуі тиіс|Туыстарды қорлау|Ұлтты, дінді, нәсілді қорлау|Қорқыту және буллинг|Насихат/Гимндер (OOC) (әскери қақтығыстарды, саясатты айту)|Флуд, спам, капс (бас әріптерді асыра пайдалану)|Бетен серверлерді, сілтемелерді, қауымдастықтарды жарнамалау|Ойыншылардың жеке ақпаратын жариялау (IP, мекенжай, фото, хат алмасу)|Әкімшілікті қорлау және оның шешімдерін құрметтемеу|Әкімшілікті әдейі шатастыру (жалған шағымдар, алдау)|DM (RP-себепсіз өлтіру/зиян келтіру)|RDM (кез келген адамды RP-себепсіз өлтіру)|DB (ойыншыны RP-себепсіз көлікпен әдейі қағып кету)|VDM (көлікпен RP-себепсіз өлтіру)|RK (кек алу үшін өлген жерге қайту)|TK (өз фракциясының мүшесін өлтіру)|SK (пайда болған жерде өлтіру)|PG (өз кейіпкеріне ерлік қасиеттерді телу)|MG (IC-де OOC ақпаратты қолдану)|Fear RP (өз өмірі үшін қорқыныштың болмауы)|NRP (RP логикасын бұзатын әрекеттер)|NRD (көлікті шындыққа жанаспайтын айдау)|ForceRP (басқа ойыншыға RP-жағдайдың нәтижесін таңу)|Combat Log (салдардан қашу үшін белсенді RP әрекеттер кезінде ойыннан шығу)|Combat Medic (белсенді атыс кезінде кейіпкерлерді емдеу)|Cop Baiting (қуғын жасау үшін полицияны арандату)|RP-escape (RP-жағдайдан тыйым салынған тәсілмен әдейі кету)|ByPass Ban (аккаунт блокталуын айналып өту)|NRP Heal (ойынсыз немесе ұрыс кезінде емдеу)|BodyBlock (көлікті денемен бөгеу)|AFK-кейіпкерді өлтіру|FanRP (көңіл көтеру және әзіл үшін рөлдік ойын)|ERP (кейіпкерлермен жыныстық, жақын және ашық эротикалық сипаттағы әрекеттерді, диалогтарды немесе жағдайларды ойнау)");
+addTR("et",K1,"Iga mängija peab teisi austama|Sugulaste solvamine|Rahvuse, religiooni, rassi solvamine|Ähvardused ja kiusamine|Propaganda/hümnid (OOC) (sõjaliste konfliktide, poliitika mainimine)|Flood, spämm, suurtähed (suurtähtede kuritarvitamine)|Võõraste serverite, linkide, kogukondade reklaam|Mängijate isikuandmete avaldamine (IP, aadress, foto, vestlused)|Administratsiooni solvamine ja tema otsuste mittearvestamine|Administratsiooni tahtlik eksitamine (valekaebused, pettus)|DM (tapmine/kahju tekitamine ilma RP-põhjuseta)|RDM (kellegi tapmine ilma RP-põhjuseta)|DB (mängija tahtlik mahasõit sõidukiga ilma RP-põhjuseta)|VDM (sõidukiga tapmine ilma RP-põhjuseta)|RK (surmapaika naasmine kättemaksuks)|TK (oma fraktsiooni liikme tapmine)|SK (tapmine ilmumiskohas)|PG (kangelaslike omaduste omistamine oma tegelasele)|MG (OOC info kasutamine IC-s)|Fear RP (hirmu puudumine oma elu pärast)|NRP (RP loogikat rikkuvad tegevused)|NRD (ebarealistlik sõiduki juhtimine)|ForceRP (RP-olukorra tulemuse pealesurumine teisele mängijale)|Combat Log (mängust väljumine aktiivsete RP-tegevuste ajal tagajärgede vältimiseks)|Combat Medic (tegelaste ravimine aktiivse tulevahetuse ajal)|Cop Baiting (politsei provotseerimine tagaajamise tekitamiseks)|RP-escape (tahtlik põgenemine RP-olukorrast keelatud viisil)|ByPass Ban (konto blokeeringu kõrvaldamine)|NRP Heal (ravimine ilma rollimängita või lahingu ajal)|BodyBlock (sõiduki blokeerimine kehaga)|AFK-tegelase tapmine|FanRP (rollimäng lõbu ja huumori pärast)|ERP (tegelastega seksuaalse, intiimse ja avalikult erõotilise iseloomuga tegevuste, dialoogide või olukordade mängimine)");
+const GL={r:{ru:"📜 Правила сервера (Часть 1)",uk:"📜 Правила сервера (Частина 1)",kk:"📜 Сервер ережелері (1-бөлім)",et:"📜 Serveri reeglid (1. osa)"},l:{ru:"⚖️ Законодательная база (Часть 2)",uk:"⚖️ Законодавча база (Частина 2)",kk:"⚖️ Заңнама базасы (2-бөлім)",et:"⚖️ Õigusaktide baas (2. osa)"}};
+const inG=s=>(/^s\d/.test(s.id)?"r":"l")===G;
+function applyTR(){const T=TR[L];DATA.forEach(s=>{if(T&&T[s.id]&&!s.t[L])s.t[L]=T[s.id];s.items.forEach(i=>{if(T&&i.t&&T[i.n]&&!i.t[L])i.t[L]=T[i.n]})})}
+function grpUI(){$("#grp").innerHTML=["r","l"].map(g=>`<button class="gb ${g===G?"on":""}" data-g="${g}">${GL[g][L]}</button>`).join("")}
+let tm0;$("#q").addEventListener("input",e=>{Q=e.target.value;clearTimeout(tm0);tm0=setTimeout(render,120)});
+const THEMES={dark:["🌙",{ru:"Тёмная",uk:"Темна",kk:"Қараңғы",et:"Tume"}],light:["☀️",{ru:"Светлая",uk:"Світла",kk:"Жарық",et:"Hele"}],aurora:["🌌",{ru:"Аврора",uk:"Аврора",kk:"Аврора",et:"Aurora"}],sunset:["🌅",{ru:"Закат",uk:"Захід",kk:"Күн батуы",et:"Päikeseloojang"}],rose:["🌸",{ru:"Роза",uk:"Рожева",kk:"Раушан",et:"Roosa"}]};
+let T="dark",R=null;try{T=localStorage.getItem("theme")||"dark"}catch(e){}
+if(!THEMES[T])T="dark";
+document.documentElement.dataset.theme=T;
+function themeUI(){$("#thcur").textContent=THEMES[T][0]+" "+THEMES[T][1][L]+" ▾";$("#thmenu").innerHTML=Object.entries(THEMES).map(([k,v])=>`<button data-t="${k}" class="${k===T?"on":""}">${v[0]} ${v[1][L]}</button>`).join("")}
+function rules(){const s=DATA.find(x=>x.id===R);if(!s)return;$("#mt").textContent=s.t[L]||s.t.ru;$("#mb").innerHTML=s.items.map((i,k)=>`<div class="mi" style="animation-delay:${k*70}ms"><b>${i.n}. ${i.t[L]||i.t.ru}</b><p>${dd(i)}</p></div>`).join("")}
+render();
+const t0=performance.now();addEventListener("load",()=>setTimeout(()=>$("#loader").classList.add("hide"),Math.max(0,900-(performance.now()-t0))));
+</script>
+</body>
+</html>
